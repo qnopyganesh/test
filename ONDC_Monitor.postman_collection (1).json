@@ -1,0 +1,708 @@
+{
+	"info": {
+		"_postman_id": "ba8d8e7c-ebf9-429c-aacf-83a194f0d111",
+		"name": "ONDC_Monitor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20106488"
+	},
+	"item": [
+		{
+			"name": "/auth/realms/fossgen/protocol/openid-connect/token Copy",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "client_id",
+							"value": "fossgen-web",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "ondc",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "ondc",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "k9Y0zRvy5ivCsYjc9c1mXLGMferM0ySg",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{keyCloakURL}}/auth/realms/fossgen/protocol/openid-connect/token",
+					"host": [
+						"{{keyCloakURL}}"
+					],
+					"path": [
+						"auth",
+						"realms",
+						"fossgen",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/all/transaction",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/all/transaction",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"all",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/get/transaction/by/date",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/get/transaction/by/date/01-01-2022/07-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"get",
+						"transaction",
+						"by",
+						"date",
+						"01-01-2022",
+						"07-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/get/transaction/id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/get/transaction/ffddbd96-352c-4ca7-a775-b9be9cffbad2",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"get",
+						"transaction",
+						"ffddbd96-352c-4ca7-a775-b9be9cffbad2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/WEEKS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/auto/WEEKS/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"auto",
+						"WEEKS",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/seller/WEEKS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/seller/auto/WEEKS/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"seller",
+						"auto",
+						"WEEKS",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/grid/seller",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/grid/seller/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"grid",
+						"seller",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/buyer/WEEKS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/buyer/auto/WEEKS/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"buyer",
+						"auto",
+						"WEEKS",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/grid/buyer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/grid/buyer/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"grid",
+						"buyer",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/MONTHS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/auto/MONTHS/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"auto",
+						"MONTHS",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/seller/MONTHS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/seller/auto/MONTHS/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"seller",
+						"auto",
+						"MONTHS",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/buyer/MONTHS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/buyer/auto/MONTHS/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"buyer",
+						"auto",
+						"MONTHS",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/YEARS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/auto/YEARS/01-01-2021/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"auto",
+						"YEARS",
+						"01-01-2021",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/seller/YEARS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/selller/auto/YEARS/01-01-2021/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"selller",
+						"auto",
+						"YEARS",
+						"01-01-2021",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/buyer/YEARS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/buyer/auto/YEARS/01-01-2021/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"buyer",
+						"auto",
+						"YEARS",
+						"01-01-2021",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/DAYS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/auto/DAYS/01-01-2021/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"auto",
+						"DAYS",
+						"01-01-2021",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/seller/DAYS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/seller/auto/DAYS/01-01-2021/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"seller",
+						"auto",
+						"DAYS",
+						"01-01-2021",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/count/buyer/{start}/{end}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/count/buyer/01-05-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"count",
+						"buyer",
+						"01-05-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/count/seller/{start}/{end}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/count/seller/01-05-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"count",
+						"seller",
+						"01-05-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/count/lookup/{start}/{end}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/lookup/auto/DAYS/01-05-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"lookup",
+						"auto",
+						"DAYS",
+						"01-05-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/count/lookup/MONTHS/{start}/{end}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/lookup/auto/MONTHS/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"lookup",
+						"auto",
+						"MONTHS",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/count/lookup/YEARS/{start}/{end}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/lookup/auto/YEARS/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"lookup",
+						"auto",
+						"YEARS",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/dashboard/count/lookup/WEEKS/{start}/{end}",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{urlMonitor}}/api/audit/dashboard/lookup/auto/WEEKS/01-01-2022/12-05-2022",
+					"host": [
+						"{{urlMonitor}}"
+					],
+					"path": [
+						"api",
+						"audit",
+						"dashboard",
+						"lookup",
+						"auto",
+						"WEEKS",
+						"01-01-2022",
+						"12-05-2022"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
